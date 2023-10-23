@@ -6,10 +6,14 @@ import {
   publicProcedure,
 } from "@/server/api/trpc";
 
+export interface HelloPostResult {
+  greeting: string;
+}
+
 export const postRouter = createTRPCRouter({
   hello: publicProcedure
     .input(z.object({ text: z.string() }))
-    .query(({ input }) => {
+    .query<HelloPostResult>(({ input }) => {
       return {
         greeting: `Hello ${input.text}`,
       };

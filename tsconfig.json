@@ -1,7 +1,11 @@
 {
   "compilerOptions": {
     "target": "es2017",
-    "lib": ["dom", "dom.iterable", "esnext"],
+    "lib": [
+      "dom",
+      "dom.iterable",
+      "esnext"
+    ],
     "allowJs": true,
     "checkJs": true,
     "skipLibCheck": true,
@@ -18,9 +22,39 @@
     "noUncheckedIndexedAccess": true,
     "baseUrl": ".",
     "paths": {
-      "@/*": ["./src/*"]
+      "@/*": [
+        "./src/*"
+      ],
+      "@components/*": [
+        "./src/components/*"
+      ],
+      "@components": [
+        "./src/components"
+      ],
+      "@server/*": [
+        "./src/server/*"
+      ],
+      "@server": [
+        "./src/server"
+      ],
+      "@trpc-app": [
+        "./src/trpc"
+      ],
+      "@trpc-app/*": [
+        "./src/trpc/*"
+      ],
+      "@app/*": [
+        "./src/app/*"
+      ],
+      "@app": [
+        "./src/app"
+      ],
     },
-    "plugins": [{ "name": "next" }]
+    "plugins": [
+      {
+        "name": "next"
+      }
+    ]
   },
   "include": [
     ".eslintrc.cjs",
@@ -31,5 +65,7 @@
     "**/*.mjs",
     ".next/types/**/*.ts"
   ],
-  "exclude": ["node_modules"]
+  "exclude": [
+    "node_modules"
+  ]
 }
