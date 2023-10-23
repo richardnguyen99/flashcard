@@ -1,10 +1,6 @@
 import * as React from "react";
-import Link from "next/link";
-import clsx from "classnames";
 
-import { CreatePost } from "@app/_components/create-post";
 import { getServerAuthSession } from "@server/auth";
-import { api } from "@trpc-app/server";
 import Navbar from "./_components/navbar";
 
 const Home: React.FC = async () => {
