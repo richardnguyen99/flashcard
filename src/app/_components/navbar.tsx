@@ -1,12 +1,13 @@
 import * as React from "react";
 import Link from "next/link";
 import clsx from "classnames";
+import { PlusIcon, SearchIcon } from "@primer/octicons-react";
 
 import { getServerAuthSession } from "@server/auth";
-import { PlusIcon, SearchIcon } from "@primer/octicons-react";
 import Nav from "./nav";
+import LoginButton from "./login-button";
 
-const Navbar = async () => {
+const Navbar: React.FC = async () => {
   const session = await getServerAuthSession();
   return (
     <div
@@ -66,18 +67,7 @@ const Navbar = async () => {
             <div className="inline-flex items-center justify-center rounded-full p-1 transition-colors duration-200 ease-in-out dark:bg-sky-600 dark:hover:bg-sky-500">
               <PlusIcon size={24} />
             </div>
-            {session?.user ? (
-              <div>Logout</div>
-            ) : (
-              <>
-                <div className="box-border flex w-fit cursor-pointer items-center justify-center rounded-md px-3 py-2 font-bold dark:hover:bg-slate-800">
-                  <span className="whitespace-nowrap">Login</span>
-                </div>
-                <button className="box-border flex w-fit cursor-pointer items-center justify-center rounded-md px-3 py-2 font-bold dark:bg-amber-500 dark:text-black">
-                  <span className="whitespace-nowrap">Sign up</span>
-                </button>
-              </>
-            )}
+            {session?.user ? <div>Logout</div> : <LoginButton />}
           </div>
         </div>
       </div>

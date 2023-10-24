@@ -1,7 +1,8 @@
 import * as React from "react";
 import Link from "next/link";
-import NavItem from "./nav-item";
 import { ChevronDownIcon } from "@primer/octicons-react";
+
+import NavItem from "./nav-item";
 
 const Nav: React.FC = () => {
   return (
