@@ -2,7 +2,6 @@
 
 import * as React from "react";
 import clsx from "classnames";
-import Link from "next/link";
 import { Dialog, Transition } from "@headlessui/react";
 import { signIn } from "next-auth/react";
 
