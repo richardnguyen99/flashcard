@@ -2,7 +2,7 @@
 
 import * as React from "react";
 
-import LoginForm from "./login-form";
+import LoginForm from "./modal";
 
 const LoginButton: React.FC = () => {
   const [isOpen, setIsOpen] = React.useState(false);
