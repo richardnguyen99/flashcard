@@ -95,7 +95,7 @@ const LoginForm: React.FC<DialogModalProps> = ({ isOpen, closeModal }) => {
                 <div className="mt-4"></div>
                 <button
                   onClick={handleSignInWithDiscord}
-                  className="flex w-full items-center justify-center gap-4 rounded-md bg-[#5865F2] px-4 py-2 text-lg font-bold hover:bg-[#555fd1]"
+                  className="flex w-full items-center justify-center gap-4 rounded-md bg-[#5865F2] px-4 py-2 text-lg font-bold hover:bg-[#5d68e2]"
                 >
                   <DiscordIcon />
                   <p>Sign in with Discord</p>
