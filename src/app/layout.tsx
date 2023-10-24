@@ -54,7 +54,7 @@ interface Props {
 const RootLayout: React.FC<Props> = ({ children }) => {
   return (
     <html lang="en">
-      <body className={`font-sans ${inter.variable}`}>
+      <body className={`font-sans ${inter.variable} dark:bg-slate-950`}>
         <TRPCReactProvider headers={headers()}>
           <ClientProviders>{children}</ClientProviders>
         </TRPCReactProvider>

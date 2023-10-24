@@ -4,14 +4,15 @@ import clsx from "classnames";
 
 import { getServerAuthSession } from "@server/auth";
 import { PlusIcon, SearchIcon } from "@primer/octicons-react";
+import Nav from "./nav";
 
 const Navbar = async () => {
   const session = await getServerAuthSession();
   return (
     <div
       className={clsx({
-        "fixed inset-x-0 top-0 z-[10] h-fit py-3": true,
-        "border-b border-zinc-300 dark:border-zinc-950": true,
+        "fixed inset-x-0 top-0 z-[10] py-3": true,
+        "border-b border-zinc-300 dark:border-zinc-700": true,
         "bg-white dark:bg-slate-950": true,
       })}
     >
@@ -35,10 +36,8 @@ const Navbar = async () => {
           </p>
         </Link>
         <div className="flex w-full items-center gap-5">
-          <div className="flex items-center gap-4">
-            <div>Categories</div>
-            <Link href="/about">About</Link>
-          </div>
+          <Nav />
+
           <form
             className={clsx({
               "flex w-full items-center justify-between gap-4": true,
