@@ -3,7 +3,7 @@ import * as React from "react";
 // import { getServerAuthSession } from "@server/auth";
 import Navbar from "./_components/navbar";
 
-const Home: React.FC = async () => {
+const Home: React.FC = () => {
   // const session = await getServerAuthSession();
 
   return (
