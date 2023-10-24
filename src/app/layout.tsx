@@ -8,6 +8,8 @@ import type { Metadata } from "next";
 
 import { TRPCReactProvider } from "@/trpc/react";
 import ClientProviders from "./_components/providers";
+import { SessionProvider } from "next-auth/react";
+import { getServerAuthSession } from "@/server/auth";
 
 const inter = Inter({
   subsets: ["latin"],
@@ -51,14 +53,16 @@ interface Props {
   children: React.ReactNode;
 }
 
-const RootLayout: React.FC<Props> = ({ children }) => {
+const RootLayout: React.FC<Props> = async ({ children }) => {
+  const session = await getServerAuthSession();
+
   return (
     <html lang="en">
       <body
-        className={`font-sans ${inter.variable} bg-slate-200 dark:bg-slate-950`}
+        className={`font-sans ${inter.variable} light:bg-slate-200 dark:bg-slate-950`}
       >
         <TRPCReactProvider headers={headers()}>
-          <ClientProviders>{children}</ClientProviders>
+          <ClientProviders user={session?.user}>{children}</ClientProviders>
         </TRPCReactProvider>
       </body>
     </html>

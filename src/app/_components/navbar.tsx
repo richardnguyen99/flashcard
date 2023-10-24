@@ -22,7 +22,7 @@ const Navbar: React.FC = async () => {
       <div
         className={clsx({
           "flex items-center justify-between gap-5": true,
-          "mx-auto h-full max-w-7xl px-8": true,
+          "mx-auto h-full max-w-5xl px-8": true,
         })}
       >
         {/* Logo */}
