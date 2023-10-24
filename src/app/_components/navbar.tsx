@@ -45,29 +45,29 @@ const Navbar: React.FC = async () => {
             className={clsx({
               "flex w-full items-center justify-between gap-4": true,
               "rounded-full px-4 py-2": true,
-              "dark:bg-slate-900": true,
+              "bg-slate-200 dark:bg-slate-900": true,
             })}
           >
             <div className="flex w-full items-center gap-3">
               <SearchIcon size={16} />
               <input
                 placeholder="Search..."
-                className="w-full text-sm focus:outline-none dark:bg-slate-900"
+                className="w-full bg-slate-200 text-sm focus:outline-none dark:bg-slate-900"
               />
             </div>
             <div
               className={clsx({
                 "font-mono text-xs": true,
                 "rounded-md p-1": true,
-                "border dark:border-slate-500": true,
+                "border border-slate-700 dark:border-slate-500": true,
               })}
             >
               Ctrl+K
             </div>
           </form>
           <div className="flex items-center gap-3">
-            <div className="inline-flex items-center justify-center rounded-full p-1 transition-colors duration-200 ease-in-out dark:bg-sky-600 dark:hover:bg-sky-500">
-              <PlusIcon size={24} />
+            <div className="inline-flex items-center justify-center rounded-full bg-sky-500 p-1 transition-colors duration-200 ease-in-out hover:bg-sky-500 dark:bg-sky-600 dark:hover:bg-sky-600">
+              <PlusIcon size={24} className="fill-white stroke-white" />
             </div>
             {session?.user ? (
               <Credentials user={session?.user} />

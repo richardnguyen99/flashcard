@@ -29,7 +29,7 @@ const Credentials: React.FC<CredentialsProps> = ({ user }) => {
       <Menu as="div" className="relative inline-block text-left">
         <div>
           <Menu.Button className="flex items-center justify-center">
-            <span className="relative flex h-8 w-8 shrink-0 overflow-hidden rounded-full dark:bg-slate-700">
+            <span className="relative flex h-8 w-8 shrink-0 overflow-hidden rounded-full bg-slate-200 dark:bg-slate-700">
               <div className="relative aspect-square h-full w-full">
                 {user.image && (
                   <Image
@@ -55,10 +55,10 @@ const Credentials: React.FC<CredentialsProps> = ({ user }) => {
           <Menu.Items className="absolute right-0 mt-2 w-72 origin-top-right divide-y divide-gray-100 rounded-md border bg-white shadow-lg ring-1 ring-black ring-opacity-5 focus:outline-none dark:divide-slate-700 dark:border-slate-700 dark:bg-slate-900">
             <div className="px-2 py-2">
               <div className="gap mb-4 mt-2 flex flex-col pl-3">
-                <h3 className="font-bold text-slate-100">
+                <h3 className="font-bold text-slate-800 dark:text-slate-100">
                   {user.name ?? "anonymous"}
                 </h3>
-                <p className="overflow-clip text-ellipsis text-sm text-slate-300">
+                <p className="overflow-clip text-ellipsis text-sm text-slate-500 dark:text-slate-300">
                   {user.email ?? "anonymous"}
                 </p>
               </div>

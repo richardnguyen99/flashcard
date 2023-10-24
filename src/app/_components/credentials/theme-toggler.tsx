@@ -25,7 +25,7 @@ export default function Example() {
         <div className="relative flex items-center justify-center">
           <Listbox.Button
             as="div"
-            className="relative flex h-6 w-28 cursor-default items-center justify-between rounded-lg bg-white py-2 pl-3 pr-10 text-left shadow-md focus:outline-none focus-visible:border-indigo-500 focus-visible:ring-2 focus-visible:ring-white focus-visible:ring-opacity-75 focus-visible:ring-offset-2 focus-visible:ring-offset-orange-300 dark:bg-slate-800 sm:text-sm"
+            className="relative flex h-6 w-28 cursor-default items-center justify-between rounded-lg bg-slate-50 py-2 pl-3 pr-10 text-left shadow-md focus:outline-none focus-visible:border-indigo-500 focus-visible:ring-2 focus-visible:ring-white focus-visible:ring-opacity-75 focus-visible:ring-offset-2 focus-visible:ring-offset-orange-300 dark:bg-slate-800 sm:text-sm"
           >
             <span className="block truncate capitalize">{theme}</span>
             <span className="pointer-events-none absolute inset-y-0 right-0 flex items-center pr-2">
@@ -38,7 +38,7 @@ export default function Example() {
             leaveFrom="opacity-100"
             leaveTo="opacity-0"
           >
-            <Listbox.Options className="absolute right-0 top-0 mt-8 max-h-32 w-full overflow-auto rounded-md bg-white py-1 text-base shadow-lg ring-1 ring-black ring-opacity-5 focus:outline-none dark:bg-slate-800 dark:shadow-slate-950 sm:text-sm">
+            <Listbox.Options className="absolute right-0 top-0 mt-8 max-h-32 w-full overflow-auto rounded-md bg-slate-50 py-1 text-base shadow-lg ring-1 ring-black ring-opacity-5 focus:outline-none dark:bg-slate-800 dark:shadow-slate-950 sm:text-sm">
               {themes.map((theme, themeIdx) => (
                 <Listbox.Option
                   key={themeIdx}
@@ -48,7 +48,7 @@ export default function Example() {
                       "relative cursor-default select-none": true,
                       "px-2 py-2": true,
                       "dark:bg-slate-700 dark:text-slate-100": active,
-                      "text-gray-900 dark:text-slate-100": active,
+                      "bg-slate-100 text-gray-900": active,
                     })
                   }
                   value={theme.value}
