@@ -7,6 +7,7 @@ import { headers } from "next/headers";
 import type { Metadata } from "next";
 
 import { TRPCReactProvider } from "@/trpc/react";
+import ClientProviders from "./_components/providers";
 
 const inter = Inter({
   subsets: ["latin"],
@@ -53,8 +54,10 @@ interface Props {
 const RootLayout: React.FC<Props> = ({ children }) => {
   return (
     <html lang="en">
-      <body className={`font-sans ${inter.variable}`}>
-        <TRPCReactProvider headers={headers()}>{children}</TRPCReactProvider>
+      <body className={`font-sans ${inter.variable} dark:bg-slate-950`}>
+        <TRPCReactProvider headers={headers()}>
+          <ClientProviders>{children}</ClientProviders>
+        </TRPCReactProvider>
       </body>
     </html>
   );
