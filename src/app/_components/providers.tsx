@@ -4,6 +4,8 @@ import * as React from "react";
 import { ThemeProvider as NextThemesProvider } from "next-themes";
 import type { User } from "next-auth";
 
+import LoginModalProvider from "./login/provider";
+
 interface Props {
   user?: User;
 }
@@ -20,7 +22,7 @@ const ClientProviders: React.FC<React.PropsWithChildren<Props>> = ({
       enableColorScheme
       forcedTheme={user ? undefined : "dark"}
     >
-      {children}
+      <LoginModalProvider>{children}</LoginModalProvider>
     </NextThemesProvider>
   );
 };

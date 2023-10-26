@@ -8,6 +8,8 @@ import { signIn } from "next-auth/react";
 interface DialogModalProps {
   isOpen: boolean;
   closeModal: () => void;
+
+  callbackUrl?: string;
 }
 
 const DiscordIcon: React.FC = () => {
@@ -32,9 +34,9 @@ const DiscordIcon: React.FC = () => {
   );
 };
 
-const LoginForm: React.FC<DialogModalProps> = ({ isOpen, closeModal }) => {
+const LoginModal: React.FC<DialogModalProps> = ({ isOpen, closeModal }) => {
   const handleSignInWithDiscord = React.useCallback(() => {
-    signIn("discord").catch(console.error);
+    signIn("discord", {}).catch(console.error);
   }, []);
 
   return (
@@ -108,4 +110,4 @@ const LoginForm: React.FC<DialogModalProps> = ({ isOpen, closeModal }) => {
   );
 };
 
-export default LoginForm;
+export default LoginModal;

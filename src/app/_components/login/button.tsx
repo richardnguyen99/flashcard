@@ -1,31 +1,27 @@
 "use client";
 
 import * as React from "react";
+import { usePathname } from "next/navigation";
 
-import LoginForm from "./modal";
+import { useLoginModal } from "./provider";
 
 const LoginButton: React.FC = () => {
-  const [isOpen, setIsOpen] = React.useState(false);
+  const pathname = usePathname();
+  const { openModal } = useLoginModal();
 
   const handleClick = React.useCallback(() => {
-    setIsOpen(true);
-  }, []);
+    const callbackUrl = `${pathname}`;
 
-  const handleClose = React.useCallback(() => {
-    setIsOpen(false);
-  }, []);
+    openModal(callbackUrl);
+  }, [openModal, pathname]);
 
   return (
-    <>
-      <button
-        onClick={handleClick}
-        className="box-border flex w-fit cursor-pointer items-center justify-center rounded-md px-3 py-2 font-bold dark:bg-amber-500 dark:text-black"
-      >
-        <span className="whitespace-nowrap">Login</span>
-      </button>
-
-      <LoginForm isOpen={isOpen} closeModal={handleClose} />
-    </>
+    <button
+      onClick={handleClick}
+      className="box-border flex w-fit cursor-pointer items-center justify-center rounded-md px-3 py-2 font-bold dark:bg-amber-500 dark:text-black"
+    >
+      <span className="whitespace-nowrap">Login</span>
+    </button>
   );
 };
 

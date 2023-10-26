@@ -9,6 +9,7 @@ import type { Metadata } from "next";
 import { TRPCReactProvider } from "@/trpc/react";
 import ClientProviders from "./_components/providers";
 import { getServerAuthSession } from "@/server/auth";
+import Navbar from "./_components/navbar";
 
 const inter = Inter({
   subsets: ["latin"],
@@ -60,9 +61,14 @@ const RootLayout: React.FC<Props> = async ({ children }) => {
       <body
         className={`font-sans ${inter.variable} bg-slate-100 dark:bg-slate-950`}
       >
-        <TRPCReactProvider headers={headers()}>
-          <ClientProviders user={session?.user}>{children}</ClientProviders>
-        </TRPCReactProvider>
+        <React.Suspense fallback={null}>
+          <TRPCReactProvider headers={headers()}>
+            <ClientProviders user={session?.user}>
+              <Navbar />
+              <main className="mt-20">{children}</main>
+            </ClientProviders>
+          </TRPCReactProvider>
+        </React.Suspense>
       </body>
     </html>
   );

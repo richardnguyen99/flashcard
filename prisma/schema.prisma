@@ -58,15 +58,40 @@ model Session {
   @@index([userId])
 }
 
+model QuestionAndAnswer {
+  question    String
+  answer      String
+  flashCard   FlashCard @relation(fields: [flashCardId], references: [id])
+  flashCardId Int
+
+  @@id([question, answer])
+  @@index([flashCardId])
+}
+
+model FlashCard {
+  id        Int      @id @default(autoincrement())
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt
+
+  createdBy   User   @relation(fields: [createdById], references: [id])
+  createdById String
+
+  qa QuestionAndAnswer[]
+
+  @@index([id])
+  @@index([createdById])
+}
+
 model User {
-  id            String    @id @default(cuid())
+  id            String      @id @default(cuid())
   name          String?
-  email         String?   @unique
+  email         String?     @unique
   emailVerified DateTime?
   image         String?
   accounts      Account[]
   sessions      Session[]
   posts         Post[]
+  flashcards    FlashCard[]
 }
 
 model VerificationToken {
