@@ -4,7 +4,6 @@ import * as React from "react";
 import clsx from "classnames";
 import { Dialog, Transition } from "@headlessui/react";
 import { signIn } from "next-auth/react";
-import Google from "next-auth/providers/google";
 import { MarkGithubIcon } from "@primer/octicons-react";
 
 interface DialogModalProps {
