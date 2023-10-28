@@ -5,6 +5,7 @@ import Unauthorized from "@/components/template/unauthorized";
 import { getServerAuthSession } from "@/server/auth";
 import EditableTitle from "@/components/flashcard/editable-title";
 import EditableDescription from "@/components/flashcard/editable-description";
+import EditableSchool from "@/components/flashcard/editable-school";
 
 export const generateMetadata = async (): Promise<Metadata> => {
   const session = await getServerAuthSession();
@@ -33,6 +34,12 @@ const CreatePage: React.FC = async () => {
       <div className="flex flex-col justify-center gap-5">
         <EditableTitle />
         <EditableDescription />
+        <div className="flex items-center gap-4">
+          <div className="w-1/2">
+            <EditableSchool />
+          </div>
+          <div className="w-1/2"></div>
+        </div>
       </div>
     </div>
   );

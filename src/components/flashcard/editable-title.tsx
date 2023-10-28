@@ -6,24 +6,18 @@ import clsx from "classnames";
 const EditableTitle: React.FC = () => {
   return (
     <div className="flex flex-col justify-center gap-3">
-      <label className="text-xl font-extrabold">
-        Your FlashCard Set Tittle
-      </label>
+      <label className="text-xl font-extrabold">Tittle</label>
       <input
         type="text"
-        placeholder="Enter something here"
+        placeholder="Example: 'Wordld War 2 History', 'Calculus 1', ..."
         className={clsx({
-          "rounded-md px-4 py-2": true,
-          "border ": true,
-          "dark:border-slate-600 dark:hover:border-slate-400": true,
-          "outline-none focus:border-transparent": true,
-          "focus:ring focus:ring-slate-200 dark:focus:ring-slate-600": true,
+          "rounded-md px-4 py-2 focus:ring": true,
+          "border outline-none focus:border-transparent": true,
           "bg-slate-50 dark:bg-slate-900": true,
-          "hover:bg-white focus:bg-white": true,
-          "border-slate-300 hover:border-slate-300 focus:ring-slate-400": true,
-          " dark:hover:bg-slate-800": true,
-          "dark:border-slate-300 dark:hover:border-slate-300 dark:focus:ring-slate-400":
-            true,
+          "border-slate-300 dark:border-slate-600": true,
+          "focus:bg-white dark:focus:bg-slate-800": true,
+          "hover:bg-white dark:bg-slate-800": true,
+          "focus:ring-slate-400 dark:focus:ring-slate-600": true,
         })}
       />
     </div>

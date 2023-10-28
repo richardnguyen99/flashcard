@@ -35,6 +35,8 @@ export const env = createEnv({
     GOOGLE_CLIENT_SECRET: z.string(),
     GITHUB_CLIENT_ID: z.string(),
     GITHUB_CLIENT_SECRET: z.string(),
+    BACK4APP_APP_ID: z.string(),
+    BACK4APP_MASTER_KEY: z.string(),
 
     // Url base
     URL_BASE: z.string(),
@@ -64,6 +66,8 @@ export const env = createEnv({
     GOOGLE_CLIENT_SECRET: process.env.GOOGLE_CLIENT_SECRET,
     GITHUB_CLIENT_ID: process.env.GITHUB_CLIENT_ID,
     GITHUB_CLIENT_SECRET: process.env.GITHUB_CLIENT_SECRET,
+    BACK4APP_APP_ID: process.env.BACK4APP_APP_ID,
+    BACK4APP_MASTER_KEY: process.env.BACK4APP_MASTER_KEY,
     URL_BASE: process.env.VERCEL_URL
       ? `https://${process.env.VERCEL_URL}`
       : "http://localhost:3000",

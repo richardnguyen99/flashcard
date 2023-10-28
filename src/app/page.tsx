@@ -1,7 +1,6 @@
 import * as React from "react";
 
 import { getServerAuthSession } from "@server/auth";
-import Navbar from "./_components/navbar";
 import FlashCardPreviewLayout from "@/components/flashcard/preview-layout";
 
 const Home: React.FC = async () => {
